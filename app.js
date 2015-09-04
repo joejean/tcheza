@@ -9,9 +9,20 @@ var nunjucks = require('nunjucks');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+
 var app = express();
 
 
+<<<<<<< HEAD
+=======
+
+var http = require('http')
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+
+
+>>>>>>> f2f84a5dd4c3fedbbb5d8f9dc72af063da774d0a
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'nunjucks');
@@ -52,6 +63,10 @@ if (app.get('env') === 'development') {
   });
 }
 
+
+
+
+
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -61,6 +76,29 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+
+
+//Socket Communication protocols
+io.on('connection', function(socket){
+
+
+  //All event listeners from the client
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+
+
+
+
+
+});
+
+
+
+
+
 
 
 module.exports = app;
