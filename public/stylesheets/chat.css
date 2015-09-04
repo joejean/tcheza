@@ -1,3 +1,89 @@
 .groupchat-title{
 	text-align: center;
+	color: black;
+}
+
+.textbox{
+	text-align: center;
+	width: 300px;
+	height: 400px;
+	margin: auto;
+	background-color: white;
+	border: 2px solid;
+    border-radius: 25px;
+}
+
+
+.bubble{
+position: relative;
+display:inline-block;
+max-width:250px;
+min-height:1.5em;
+padding: 20px;
+background: #FFFFFF;
+border: #7F7F7F solid 4px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+}
+
+.bubble:after{
+content: "";
+position: absolute;
+bottom: -15px;
+left: 60%;
+border-style: solid;
+border-width: 15px 15px 0;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubble:before{
+content: "";
+position: absolute;
+bottom: -19.5px;
+left: calc(60% - 3px) ;
+border-style: solid;
+border-width: 18px 18px 0;
+border-color: #7F7F7F transparent;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+
+
+.talk-bubble {
+	margin: 40px;
+  display: inline-block;
+  position: relative;
+	width: 200px;
+	height: auto;
+	background-color: lightyellow;
+}
+
+.border{
+  border: 8px solid #666;
+}
+.round{
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+
+}
+
+
+.tri-right.border.btm-left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+  right: auto;
+  top: auto;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #666 transparent transparent #666;
 }
