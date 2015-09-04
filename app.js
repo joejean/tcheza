@@ -13,11 +13,9 @@ var users = require('./routes/users');
 var app = express();
 
 
+// var http = require('http')
+// var server = require('http').Server(app);
 
-
-var http = require('http')
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
 
 
 
@@ -77,21 +75,6 @@ app.use(function(err, req, res, next) {
 
 
 
-
-//Socket Communication protocols
-io.on('connection', function(socket){
-
-
-  //All event listeners from the client
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-
-
-
-
-
-});
 
 
 
