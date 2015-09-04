@@ -13,8 +13,7 @@ var users = require('./routes/users');
 var app = express();
 
 
-<<<<<<< HEAD
-=======
+
 
 var http = require('http')
 var server = require('http').Server(app);
@@ -22,7 +21,6 @@ var io = require('socket.io')(server);
 
 
 
->>>>>>> f2f84a5dd4c3fedbbb5d8f9dc72af063da774d0a
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'nunjucks');
