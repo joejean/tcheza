@@ -8,7 +8,16 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+
 var app = express();
+
+
+
+var http = require('http')
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +55,10 @@ if (app.get('env') === 'development') {
   });
 }
 
+
+
+
+
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -55,6 +68,29 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+
+
+//Socket Communication protocols
+io.on('connection', function(socket){
+
+
+  //All event listeners from the client
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+
+
+
+
+
+});
+
+
+
+
+
 
 
 module.exports = app;
